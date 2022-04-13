@@ -1,9 +1,10 @@
+
 int buttonPin=2;
 volatile int ISRCounter = 3;
 long timeCounter = 0;
 const int timeThreshold = 140;
 int buttonState;
-int  T = 20;
+int  T = 85;
          
 void setup()       
 { 
@@ -24,7 +25,7 @@ delay (T);
 } 
   }
   if(ISRCounter==1){
-          for (int i = 10; i > 5; i=i-1)   
+          for (int i = 12; i > 3; i=i-1)   
 { 
 digitalWrite(i , HIGH) ; 
 delay (T); 
