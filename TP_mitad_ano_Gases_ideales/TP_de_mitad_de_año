@@ -1,0 +1,7 @@
+El proyecto que voy a realizar para la primer etapa de informática,
+ es el cálculo de los gases ideales en donde utilizo la formula de PV=nRT  pero con una modificación,
+  utilizo para calcular  moles y no moléculas para no utilizar variables enormes, y facilitar la escritura.
+Ingresaría las variables PV=nRT para luego aumentar alguna/s de la/s variable/s y las otras dejarlas constantes para calcular la incógnita (otra de ellas). 
+Esto los utilizamos en física II
+
+Juarez Alejandro
