@@ -13,8 +13,8 @@ typedef struct variables { //variables de gases ideales
 
 int varia=3; //variable para elegir la ecuacion
 
-//subprogramas
-	int inicio()
+//funciones
+int inicio()
 	{
 	printf("=========================================================\n");
 	printf("|Programa para calcular con la ecuacion de Gases Ideales|\n"); //introduccion
@@ -24,7 +24,7 @@ int varia=3; //variable para elegir la ecuacion
 	printf("2- Calcular una incognita de (V1xP1)/T1 = (V2xP2)/T2\n\n"); //opcion 2
 	}
 	
-	Variables ingresar(Variables *v1,Variables *v2) //ingreso de valores, sirve para las dos opciones
+Variables ingresar(Variables *v1,Variables *v2) //ingreso de valores, sirve para las dos opciones
 	{
 		system("cls"); //limpia consola
 		if(varia==1) //Indica que ecuacion estas utilizando
@@ -57,7 +57,7 @@ int varia=3; //variable para elegir la ecuacion
 	}
 	}
 
-		Variables ecuacion_PVNRT(Variables *v1) //formulas y calculos de 1era ecuacion
+Variables ecuacion_PVNRT(Variables *v1) //formulas y calculos de 1era ecuacion
 	{
 		if (v1->nmoles==0){// si es igual a 0, es por que es la incognita
 		v1->nmoles = (v1->volumen*v1->presion)/(R*v1->temperatura);	// (V*P)/(R*T) Y lo cargamos en la variable que antes tenia la incognita
@@ -84,8 +84,9 @@ int varia=3; //variable para elegir la ecuacion
 		v2->presion= (v1->presion*v1->volumen*v2->temperatura)/(v2->volumen*v1->temperatura);
 		}
 	}
+
 	
-	Variables imprimir_resultados(Variables *v1, Variables *v2) //resultados, sirven para las dos ecuaciones
+Variables imprimir_resultados(Variables *v1, Variables *v2) //resultados, sirven para las dos ecuaciones
 	{
 	system("cls");
 	printf("===============================\n");
