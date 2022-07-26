@@ -22,9 +22,10 @@ int inicio()
 	printf("Elija una opcion: (Escriba 1 o 2) \n\n");
 	printf("1- Calcular una incognita de PV=nRT\n"); //opcion 1
 	printf("2- Calcular una incognita de (V1xP1)/T1 = (V2xP2)/T2\n\n"); //opcion 2
+	return 0;
 	}
 	
-Variables ingresar(Variables *v1,Variables *v2) //ingreso de valores, sirve para las dos opciones
+ void ingresar(Variables *v1,Variables *v2) //ingreso de valores, sirve para las dos opciones
 	{
 		system("cls"); //limpia consola
 		if(varia==1) //Indica que ecuacion estas utilizando
@@ -57,7 +58,7 @@ Variables ingresar(Variables *v1,Variables *v2) //ingreso de valores, sirve para
 	}
 	}
 
-Variables ecuacion_PVNRT(Variables *v1) //formulas y calculos de 1era ecuacion
+void ecuacion_PVNRT(Variables *v1) //formulas y calculos de 1era ecuacion
 	{
 		if (v1->nmoles==0){// si es igual a 0, es por que es la incognita
 		v1->nmoles = (v1->volumen*v1->presion)/(R*v1->temperatura);	// (V*P)/(R*T) Y lo cargamos en la variable que antes tenia la incognita
@@ -72,7 +73,7 @@ Variables ecuacion_PVNRT(Variables *v1) //formulas y calculos de 1era ecuacion
 		v1->volumen = (v1->nmoles*v1->temperatura*R)/(v1->presion);	
 		}
 	}
-		Variables ecuacion_VPT(Variables *v1,Variables *v2) //formulas y calculos de 2da ecuacion
+void ecuacion_VPT(Variables *v1,Variables *v2) //formulas y calculos de 2da ecuacion
 	{
 		if(v2->temperatura==0){
 		v2->temperatura= (v2->presion*v2->volumen*v1->temperatura)/(v1->presion*v1->volumen);
@@ -86,7 +87,7 @@ Variables ecuacion_PVNRT(Variables *v1) //formulas y calculos de 1era ecuacion
 	}
 
 	
-Variables imprimir_resultados(Variables *v1, Variables *v2) //resultados, sirven para las dos ecuaciones
+void imprimir_resultados(Variables *v1, Variables *v2) //resultados, sirven para las dos ecuaciones
 	{
 	system("cls");
 	printf("===============================\n");
@@ -128,4 +129,5 @@ int main()
 			imprimir_resultados(&v1,&v2);//los mostramos
 		break;
 	}
+return 0;
 }
